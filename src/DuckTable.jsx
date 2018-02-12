@@ -6,42 +6,34 @@ import { orderBy } from 'lodash';
 class DuckTable extends Component {
   constructor(props) {
     super(props);
+    console.log('Ducktable props:');
+    console.log(props);
     this.state = {
-      sightings: [],
+      sightings: props.sightings,
       sortBySelect: 'time',
-      orderSelect: 'asc',
-      newSort: false
+      orderSelect: 'asc'
     };
     this.update = this.update.bind(this);
     this.handleSortByChange = this.handleSortByChange.bind(this);
     this.handleOrderChange = this.handleOrderChange.bind(this);
     this.refreshSort = this.refreshSort.bind(this);
+    console.log('DuckTable state:')
+    console.log(this.state);
+    //this.refreshSort();
   }
 
   update() {
-    fetch('http://localhost:8081/sightings')
-    .then(response => response.json())
-    .then(responseData => {
-      this.setState({
-        sightings: responseData
-      });
-    });
+    //this.refreshSort();
   }
 
 	componentDidMount() {
-    if (this.state.newSort) {
-      this.setState({newSort: false})
-      return;
-    }
-    this.update();
+    //this.props.refresh();
+    this.setState({sightings: this.props.sightings});
+    this.refreshSort();
 	}
 
   componentDidUpdate() {
-    if (this.state.newSort) {
-      this.setState({newSort: false})
-      return;
-    }
-    this.update();
+    //this.props.refresh();
   }
 
   handleSortByChange(event) {
@@ -60,8 +52,7 @@ class DuckTable extends Component {
     let order = this.state.orderSelect;
     console.log(orderBy(sightings, ['dateTime'], order));
     this.setState({
-      'sightings': orderBy(sightings, ['dateTime'], order),
-      'newSort': true
+      'sightings': orderBy(sightings, ['dateTime'], order)
     });
   }
 
