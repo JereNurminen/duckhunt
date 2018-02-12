@@ -1,0 +1,14 @@
+.sortControls {
+	border: solid 2px;
+	border-radius: 5px;
+	padding: 5px 15px;
+	margin: 0 0 5px;
+}
+
+.sortControls span {
+	margin: 0 5px 0;
+}
+
+.sortControls select {
+	margin: 0 5px;
+}

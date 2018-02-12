@@ -11,8 +11,6 @@ class App extends Component {
       sightings: []
     };
     this.refresh = this.refresh.bind(this);
-    console.log('App state:')
-    console.log(this.state);
   }
   
   refresh() {
@@ -31,9 +29,11 @@ class App extends Component {
 
   componentDidUpdate() {
     //this.refresh();
+    console.log('app updated');
   }
 
   render() {
+    console.log('rendering app..');
     return (
       <div className="container">
         <div className="row">

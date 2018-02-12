@@ -48,8 +48,8 @@ class DuckEditor extends Component {
     .then(response => response.json())
     .then(responseData => {
       console.log(responseData);
-      this.props.refresh();
       this.toggleEditor(false);
+      this.props.refresh();
     });
   }
 
@@ -97,7 +97,7 @@ class DuckEditor extends Component {
           <button onClick={() => this.toggleEditor(false)}>Cancel</button>
         </div>
       ) : (   
-        <button onClick={() => this.toggleEditor(true)}>Add a duck sighting</button>   
+        <button className='openEditor' onClick={() => this.toggleEditor(true)}>Add a duck sighting</button>   
       )}
       </div>
     );

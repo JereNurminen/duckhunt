@@ -7,4 +7,9 @@
 	border: solid 2px;
 	background: #fff;
 	color: #000;
+	cursor: pointer;
+}
+
+.editor button.openEditor {
+	width: 100%;
 }
