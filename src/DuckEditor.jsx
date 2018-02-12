@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Select from 'react-select';
 import './DuckEditor.css';
 import 'react-select/dist/react-select.css';
 
@@ -10,7 +9,7 @@ class DuckEditor extends Component {
       'species': [],
       'count': 1,
       'speciesOptions': [],
-      'selectedSpecies': '',
+      'selectedSpecies': 'mallard',
       'description': '',
       'isOpen': false
     };
