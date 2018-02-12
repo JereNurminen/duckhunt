@@ -1,0 +1,10 @@
+.editor textarea {
+	width: 100%;
+}
+
+.editor button {
+	margin: 5px 10px 5px 0;
+	border: solid 2px;
+	background: #fff;
+	color: #000;
+}
