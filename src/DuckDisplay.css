@@ -4,3 +4,11 @@ div.sighting {
 	padding: 5px 15px;
 	border-radius: 5px;
 }
+
+.ducks {
+
+}
+
+.ducks > span {
+	font-weight: bold;
+}

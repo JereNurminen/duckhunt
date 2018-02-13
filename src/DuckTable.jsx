@@ -21,11 +21,7 @@ class DuckTable extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('receiving props:');
-    console.log(nextProps);
     this.setState({ sightings: nextProps.sightings }, () => this.refreshSort());
-    console.log('new state:');
-    console.log(this.state);
   }
 
 	componentDidMount() {
@@ -52,7 +48,6 @@ class DuckTable extends Component {
     let sightings = this.state.sightings;
     let sortBy = this.state.sortBySelect;
     let order = this.state.orderSelect;
-    console.log(`Sort by: ${sortBy}\nOrder: ${order}\n`);
     this.setState({
       'sightings': orderBy(sightings, [sortBy, 'dateTime'], [order])
     });

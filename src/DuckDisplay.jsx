@@ -35,7 +35,9 @@ class DuckDisplay extends Component {
         <h4>{this.state.sighting.description}</h4>
         <span className="date">{this.getDate()}</span>
         <br/>
-        <span>{this.getDucks()}</span>
+        <div className="ducks">
+          <span>{this.getDucks()}</span>
+        </div>
       </div> 
     );
   }

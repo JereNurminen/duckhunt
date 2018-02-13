@@ -18,6 +18,15 @@ class DuckEditor extends Component {
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);    
     this.update = this.update.bind(this);
     this.sendSighting = this.sendSighting.bind(this);
+    this.backToDefaults = this.backToDefaults.bind(this);
+  }
+
+  backToDefaults() {
+    this.setState({
+      'count': 1,
+      'selectedSpecies': 'mallard',
+      'description': '',
+    });
   }
 
   update() {
@@ -26,7 +35,7 @@ class DuckEditor extends Component {
     .then(responseData => {
       this.setState({
         species: responseData
-      });
+      }, () => this.backToDefaults());
     });
   }
 
@@ -37,7 +46,6 @@ class DuckEditor extends Component {
       'species': this.state.selectedSpecies,
       'count': this.state.count
     }
-    console.log(data);
     fetch('http://localhost:8081/sightings', { 
       method: 'POST',
       body: JSON.stringify(data),
@@ -47,7 +55,6 @@ class DuckEditor extends Component {
     })
     .then(response => response.json())
     .then(responseData => {
-      console.log(responseData);
       this.toggleEditor(false);
       this.props.refresh();
     });

@@ -14,15 +14,13 @@ class App extends Component {
   }
   
   refresh() {
-    console.log('refresh called');
     fetch('http://localhost:8081/sightings')
     .then(response => response.json())
     .then(responseData => {
-    console.log('setting state...');
+  
       this.setState({
         sightings: responseData
       }, () => {
-        console.log('refresh complete');
         this.forceUpdate()
       });
     });
@@ -34,11 +32,9 @@ class App extends Component {
 
   componentDidUpdate() {
     //this.refresh();
-    console.log('app updated');
   }
 
   render() {
-    console.log('rendering app..');
     return (
       <div className="container">
         <div className="row">
