@@ -21,8 +21,11 @@ class DuckTable extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ sightings: nextProps.sightings });  
-    this.refreshSort();
+    console.log('receiving props:');
+    console.log(nextProps);
+    this.setState({ sightings: nextProps.sightings }, () => this.refreshSort());
+    console.log('new state:');
+    console.log(this.state);
   }
 
 	componentDidMount() {

@@ -14,11 +14,16 @@ class App extends Component {
   }
   
   refresh() {
+    console.log('refresh called');
     fetch('http://localhost:8081/sightings')
     .then(response => response.json())
     .then(responseData => {
+    console.log('setting state...');
       this.setState({
         sightings: responseData
+      }, () => {
+        console.log('refresh complete');
+        this.forceUpdate()
       });
     });
   }
