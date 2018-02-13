@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './DuckTable.css';
+import '../styles/DuckTable.css';
 import DuckDisplay from './DuckDisplay.jsx'
 import { orderBy } from 'lodash';
 

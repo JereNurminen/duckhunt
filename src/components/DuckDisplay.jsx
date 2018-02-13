@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './DuckDisplay.css';
+import '../styles/DuckDisplay.css';
 
 class DuckDisplay extends Component {
     constructor(props) {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './DuckEditor.css';
+import '../styles/DuckEditor.css';
 import 'react-select/dist/react-select.css';
 
 class DuckEditor extends Component {
