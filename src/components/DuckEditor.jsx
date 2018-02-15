@@ -27,6 +27,7 @@ class DuckEditor extends Component {
       'selectedSpecies': 'mallard',
       'description': '',
     });
+    console.log(this.state);
   }
 
   update() {
@@ -35,7 +36,7 @@ class DuckEditor extends Component {
     .then(responseData => {
       this.setState({
         species: responseData
-      }, () => this.backToDefaults());
+      });
     });
   }
 
@@ -65,7 +66,8 @@ class DuckEditor extends Component {
   }
 
   toggleEditor(toggle) {
-    this.setState({'isOpen': toggle})
+    this.setState({'isOpen': toggle});
+    this.backToDefaults();
   }
 
   handleCountChange(event) {
