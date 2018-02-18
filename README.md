@@ -11,5 +11,5 @@ Just navigate to its directory and use `yarn start`. This start the development 
 ## Technologies used
 * React. Pretty much just React, Yarn, Webpack et cetera. Mostly because I wanted to solidify my skills with it, and it seemed like the right choice for such a small and dynamic application. 
 
-## RETROSPECTIVE
+## Retrospective
 Although `create-react-app` is handy and easy to use, it adds *a lot* of dependencies, slowing down the build process significantly.
